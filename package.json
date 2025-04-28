@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "scripts": {
+    "lint": "eslint",
+    "test": "mocha tests"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^4.2.0",
+    "chai": "^5.2.0",
+    "eslint": "^9.25.1",
+    "globals": "^16.0.0",
+    "mocha": "^11.1.0"
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube 留言擷取器</title>
+  <link rel="stylesheet" href="index.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📺 YouTube 留言擷取器</h1>
+  </header>
+
+  <main>
+    <section>
+      <form id="video-comment-fetcher">
+        <fieldset>
+          <legend>擷取影片留言</legend>
+
+          <div class="form-group">
+            <label for="apiKey"><a href="https://console.cloud.google.com/apis/credentials" target="_blank" rel="external" title="API 金鑰取得方法：
+1. 點選連結進入 Google Cloud
+2. 建立專案
+3. 到 [已啟用的 API 和服務] 啟用 `YouTube Data API v3`
+4. 到 [憑證] 建立一組 API 金鑰
+">Google API 金鑰</a>：</label>
+            <input type="text" id="apiKey" required>
+          </div>
+
+          <div class="form-group">
+            <label for="videoUrl">影片網址或 ID：</label>
+            <input type="text" id="videoUrl" required>
+          </div>
+
+          <div class="form-group">
+            <label for="maxResults">擷取主留言筆數：</label>
+            <input type="number" id="maxResults" value="100" min="1">
+          </div>
+
+          <div class="form-group">
+            <label for="order">排序方式：</label>
+            <select id="order">
+              <option value="time" selected>留言時間</option>
+              <option value="relevance">相關性</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="format">輸出格式：</label>
+            <select id="format">
+              <option value="csv" selected>CSV</option>
+              <option value="html">HTML</option>
+              <option value="json">JSON</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <button type="submit">開始擷取</button>
+            <small id="video-comment-fetcher-results"></small>
+          </div>
+
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <small><a href="https://github.com/danny0838/yt-comment-fetcher" target="_blank" rel="external">yt-comment-fetcher</a>. Released under MIT license.</small>
+    </p>
+  </footer>
+</body>
+</html>
